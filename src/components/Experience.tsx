@@ -1,5 +1,3 @@
-import React from "react";
-
 const experiences = [
   {
     role: "Design Lead",
@@ -25,7 +23,7 @@ const experiences = [
 
 function Experience() {
   return (
-    <div className="py-20 relative max-w-7xl mx-auto">
+    <div className="py-20 relative max-w-6xl mx-auto">
       <h2 className="text-5xl mb-16 text-zinc-100 font-light">Experience</h2>
 
       <div className="flex flex-col divide-y divide-zinc-700/50 mt-8">

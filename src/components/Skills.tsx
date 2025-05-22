@@ -8,6 +8,7 @@ function Skills() {
       "Design Systems",
       "Front-End Development",
       "Workshops",
+      "Workshops",
     ],
     process: [
       "Design Sprint",
@@ -17,20 +18,20 @@ function Skills() {
       "UX Research",
       "Leadership",
       "Mentoring",
-      "No-Code",
+      "Mentoring",
     ],
   };
 
   return (
-    <div className="py-20 relative max-w-7xl mx-auto ">
+    <div className="py-20 relative max-w-6xl mx-auto ">
       <h2 className="text-5xl mb-10 text-zinc-100 font-extralight">Skills</h2>
 
-      <div className="flex flex-col gap-4 mt-8">
+      <div className="flex flex-col gap-4 mt-8 w-11/12 ">
         <div className="flex flex-wrap gap-4 justify-start">
           {skills.design.map((skill) => (
             <div
               key={skill}
-              className="bg-zinc-900/50 backdrop-blur-sm border border-zinc-800/50 rounded-full px-6 py-2.5 text-[15px] text-zinc-100 hover:bg-zinc-800/50 transition-colors"
+              className="bg-neutral-900 backdrop-blur-sm border border-zinc-800/50 rounded-md px-3 py-2.5 text-[15px] text-neutral-200 hover:bg-zinc-800/50 transition-colors"
             >
               {skill}
             </div>
@@ -41,7 +42,7 @@ function Skills() {
           {skills.process.map((skill) => (
             <div
               key={skill}
-              className="bg-zinc-900/50 backdrop-blur-sm border border-zinc-800/50 rounded-full px-6 py-2.5 text-[15px] text-zinc-100 hover:bg-zinc-800/50 transition-colors"
+              className="bg-neutral-900 backdrop-blur-sm border border-zinc-800/50 rounded-md px-3 py-2.5 text-[15px] text-neutral-200 hover:bg-zinc-800/50 transition-colors"
             >
               {skill}
             </div>
@@ -49,7 +50,7 @@ function Skills() {
         </div>
 
         <div className=" flex justify-start">
-          <button className="bg-zinc-900/50 backdrop-blur-sm border border-zinc-800/50 rounded-full px-6 py-2.5 text-[15px] text-zinc-100 hover:bg-zinc-800/50 transition-colors">
+          <button className="bg-neutral-900 backdrop-blur-sm border border-zinc-800/50 rounded-md px-3 py-2.5 text-[15px] text-neutral-200 hover:bg-zinc-800/50 transition-colors">
             + More
           </button>
         </div>

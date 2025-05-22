@@ -6,6 +6,7 @@ import Background from "./components/Background";
 import Testimonials from "./components/Testimonials";
 import Skills from "./components/Skills";
 import Experience from "./components/Experience";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Testimonials />
         <Skills />
         <Experience />
+        <Footer />
       </div>
     </div>
   );
