@@ -3,6 +3,9 @@ import GradientBlur from "@/components/GradientBlur";
 import Hero from "@/components/Hero";
 import ProjectContainer from "./components/ParallaxContainer/ProjectContainer";
 import Background from "./components/Background";
+import Testimonials from "./components/Testimonials";
+import Skills from "./components/Skills";
+import Experience from "./components/Experience";
 
 function App() {
   return (
@@ -26,6 +29,9 @@ function App() {
         <Hero />
         <ProjectContainer />
         <Background />
+        <Testimonials />
+        <Skills />
+        <Experience />
       </div>
     </div>
   );
