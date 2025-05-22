@@ -170,7 +170,7 @@ h6 {
 }
 
 p {
-  margin: 0 0 var(--space-md);
+  /* margin: 0 0 var(--space-md); */
   font-family: var(--font-family-base);
 }
 

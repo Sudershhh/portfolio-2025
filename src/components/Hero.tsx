@@ -63,7 +63,6 @@ export default function Hero() {
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             padding: "max(0em, calc((1.3em - 1.3em) / 2))",
-            // margin: "min(0em, calc((1.3em - 1.3em) / -2))",
           }}
         >
           Sri Sudersan
@@ -71,7 +70,7 @@ export default function Hero() {
       </h1>
 
       {/* Subheading */}
-      <p className="text-center text-gray-300 max-w-xl text-base md:text-lg font-normal mt-8">
+      <p className="text-center text-gray-300 max-w-xl text-base md:text-lg font-normal ">
         Helping startups and brands to craft expressive and engaging solutions
         for their software needs.
       </p>
@@ -149,7 +148,7 @@ export default function Hero() {
           {icons.map((logo, i) => (
             <div
               key={i}
-              className="w-22 h-22 rounded-4xl bg-neutral-900 flex items-center justify-center shadow-lg transition-opacity duration-700"
+              className="w-20 h-20 rounded-4xl bg-neutral-900 flex items-center justify-center shadow-lg transition-opacity duration-700"
               style={{
                 boxShadow: "0 2px 16px 0 rgba(0,0,0,0.10)",
                 opacity: 1,

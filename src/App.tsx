@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import GradientBlur from "@/components/GradientBlur";
 import Hero from "@/components/Hero";
 import ProjectContainer from "./components/ParallaxContainer/ProjectContainer";
+import Background from "./components/Background";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Header />
         <Hero />
         <ProjectContainer />
+        <Background />
       </div>
     </div>
   );

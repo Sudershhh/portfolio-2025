@@ -11,8 +11,14 @@ function ProjectContainer() {
   return (
     <section className="flex flex-col items-center justify-center">
       <Project
+        title="AI Agent Platform"
+        imageUrl={dm}
+        description="AI Agent Assistant is a modern web platform that brings together multiple AI tools into a single, intuitive interface. With a user-centered approach, the goal was to create a seamless experience for content analysis and research, allowing users to effortlessly analyze YouTube videos, search through books, and access Wikipedia knowledge through natural conversations with AI agents."
+      />
+
+      <Project
         title="dm.AI"
-        description="With user-centered approach, the goals was to create an intuitive interface for effortless financial management"
+        description="With user-centered approach, the goals was to create an intuitive interface for effortless financial management, With user-centered approach, the goals was to create an intuitive interface for effortless financial management"
         imageUrl={dm}
       />
 
@@ -20,11 +26,6 @@ function ProjectContainer() {
         title="Revamping an E-Commerce Website"
         description="Focus was to create a user-friendly interface that simplified the process of accessing premium operational web scraping proxies."
         imageUrl={aio}
-        stats={[
-          { label: "Usability", value: "85%" },
-          { label: "User Retention", value: "70%" },
-        ]}
-        hasButton
       />
 
       <Project
