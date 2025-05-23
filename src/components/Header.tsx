@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-
+import { CodeXml } from "lucide-react";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -11,15 +11,7 @@ const Header = () => {
         <div className="flex items-center">
           <a href="/" className="flex items-center">
             <div className="w-8 h-8 relative overflow-hidden">
-              <svg
-                viewBox="0 0 32 32"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-full h-full"
-              >
-                <path d="M22 8L16 2L10 8L16 14L22 8Z" fill="white" />
-                <path d="M22 24L16 18L10 24L16 30L22 24Z" fill="white" />
-              </svg>
+              <CodeXml color="white" fill="white" width={32} height={32} />
             </div>
           </a>
         </div>
@@ -28,28 +20,17 @@ const Header = () => {
         <nav className="hidden md:flex items-center space-x-8">
           <a
             href="#work"
-            className="text-[rgb(230,230,230)] hover:text-white transition-colors text-sm leading-4 font-semibold"
+            className="text-[rgb(230,230,230)] hover:text-white transition-colors text-base leading-4 font-semibold"
           >
             Work
           </a>
           <a
             href="/experience"
-            className="text-[rgb(230,230,230)] hover:text-white transition-colors text-sm leading-4 font-semibold"
+            className="text-[rgb(230,230,230)] hover:text-white transition-colors text-base leading-4 font-semibold"
           >
             Experience
           </a>
-          <a
-            href="/blog"
-            className="text-[rgb(230,230,230)] hover:text-white transition-colors text-sm leading-4 font-semibold"
-          >
-            Blog
-          </a>
-          <a
-            href="/faq"
-            className="text-[rgb(230,230,230)] hover:text-white transition-colors text-sm leading-4 font-semibold"
-          >
-            FAQ
-          </a>
+
           <Button className="ml-2 bg-transparent hover:bg-white/10 text-white rounded-full border border-white/20 px-6">
             Get in Touch
           </Button>

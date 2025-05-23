@@ -2,7 +2,6 @@ function Skills() {
   const skills = {
     design: [
       "UX Design",
-      "UI Design",
       "Product Design",
       "Consulting",
       "Design Systems",
@@ -18,7 +17,6 @@ function Skills() {
       "UX Research",
       "Leadership",
       "Mentoring",
-      "Mentoring",
     ],
   };
 
@@ -28,9 +26,9 @@ function Skills() {
 
       <div className="flex flex-col gap-4 mt-8 w-11/12 ">
         <div className="flex flex-wrap gap-4 justify-start">
-          {skills.design.map((skill) => (
+          {skills.design.map((skill, index) => (
             <div
-              key={skill}
+              key={index}
               className="bg-neutral-900 backdrop-blur-sm border border-zinc-800/50 rounded-md px-3 py-2.5 text-[15px] text-neutral-200 hover:bg-zinc-800/50 transition-colors"
             >
               {skill}
@@ -39,9 +37,9 @@ function Skills() {
         </div>
 
         <div className="flex flex-wrap gap-4 justify-start">
-          {skills.process.map((skill) => (
+          {skills.process.map((skill, index) => (
             <div
-              key={skill}
+              key={index}
               className="bg-neutral-900 backdrop-blur-sm border border-zinc-800/50 rounded-md px-3 py-2.5 text-[15px] text-neutral-200 hover:bg-zinc-800/50 transition-colors"
             >
               {skill}
