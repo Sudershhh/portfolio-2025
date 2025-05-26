@@ -25,7 +25,13 @@ const Header = () => {
             Work
           </a>
           <a
-            href="/experience"
+            href="#background"
+            className="text-[rgb(230,230,230)] hover:text-white transition-colors text-base leading-4 font-semibold"
+          >
+            Background
+          </a>
+          <a
+            href="#experience"
             className="text-[rgb(230,230,230)] hover:text-white transition-colors text-base leading-4 font-semibold"
           >
             Experience
@@ -65,33 +71,27 @@ const Header = () => {
         <div className="md:hidden fixed inset-0 bg-black/95 z-40 pt-24">
           <nav className="flex flex-col items-center space-y-8 p-4">
             <a
-              href="/work"
+              href="#work"
               className="text-[rgb(230,230,230)] hover:text-white text-sm leading-4 font-semibold"
               onClick={() => setIsMenuOpen(false)}
             >
               Work
             </a>
             <a
-              href="/experience"
+              href="#background"
+              className="text-[rgb(230,230,230)] hover:text-white text-sm leading-4 font-semibold"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Background
+            </a>
+            <a
+              href="#experience"
               className="text-[rgb(230,230,230)] hover:text-white text-sm leading-4 font-semibold"
               onClick={() => setIsMenuOpen(false)}
             >
               Experience
             </a>
-            <a
-              href="/blog"
-              className="text-[rgb(230,230,230)] hover:text-white text-sm leading-4 font-semibold"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Blog
-            </a>
-            <a
-              href="/faq"
-              className="text-[rgb(230,230,230)] hover:text-white text-sm leading-4 font-semibold"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              FAQ
-            </a>
+
             <Button className="mt-4 bg-transparent hover:bg-white/10 text-white rounded-full border border-white/20 px-6 py-2 text-lg">
               Get in Touch
             </Button>

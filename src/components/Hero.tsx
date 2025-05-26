@@ -17,6 +17,7 @@ import postgresLogo from "@/assets/postgresql.svg";
 import redisLogo from "@/assets/redis.svg";
 import firebaseLogo from "@/assets/firebase.svg";
 import awsLogo from "@/assets/aws.svg";
+import resume from "@/assets/Sri_Sudersan_Resume.pdf";
 
 const icons = [
   htmlLogo,
@@ -55,11 +56,11 @@ export default function Hero() {
       />
 
       <h1
-        className="text-center text-4xl md:text-5xl font-medium leading-tight mb-8"
+        className="text-center text-4xl md:text-5xl font-semibold leading-tight mb-8"
         style={{ letterSpacing: "-0.02em" }}
       >
         <span
-          className="inline-block text-6xl mb-6"
+          className="inline-block text-5xl mb-8"
           style={{
             backgroundImage:
               "radial-gradient(61% 200% at 39.7% 21.9%, rgb(255, 255, 255) 0%, rgba(0, 0, 0, 0.35) 130%)",
@@ -75,12 +76,23 @@ export default function Hero() {
 
       {/* Subheading */}
       <p className="text-center text-gray-300 max-w-xl text-lg md:text-xl font-normal ">
-        Helping startups and brands to craft expressive and engaging solutions
-        for their software needs.
+        Crafting lightning-fast frontends and robust full-stack solutions for
+        Startups and Enterprises.
       </p>
 
-      <Button className="bg-black text-white font-semibold py-4 px-6 cursor-pointer rounded-full shadow-none border-none outline-none h-auto min-h-0 min-w-0 text-xs my-8">
-        Download Resume
+      <Button
+        className="bg-black text-white font-medium py-3 px-6 rounded-full shadow-none border-none outline-none h-auto min-h-0 min-w-0 text-base md:text-lg my-8 hover:bg-neutral-900 transition-colors w-auto"
+        asChild
+      >
+        <a
+          href={resume}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center w-full h-full"
+          style={{ width: "auto" }}
+        >
+          Download Resume
+        </a>
       </Button>
       {/* Icons Carousel Row */}
       <div className="relative mx-auto w-1/2 overflow-hidden mt-10">

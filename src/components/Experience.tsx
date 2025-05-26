@@ -1,29 +1,34 @@
 const experiences = [
   {
-    role: "Design Lead",
-    company: "Geonode",
-    period: "Jan 2020 - Jan 2023",
+    role: "Founding Engineer",
+    company: "Kivane Tech (Dataparts)",
+    period: "Dec 2024 - Present",
   },
   {
-    role: "Lead UX/UI Designer",
-    company: "Truely",
-    period: "Jan 2018 - Jan 2020",
+    role: "Full Stack Engineer",
+    company: "Curajoy",
+    period: "Oct 2024 - Mar 2025",
   },
   {
-    role: "Senior Product Designer",
-    company: "Nicey Consulting",
-    period: "Jun 2016 - Present",
+    role: "Frontend Engineer",
+    company: "One Community Global",
+    period: "Jun 2024 - Oct 2024",
   },
   {
-    role: "Co-Founder",
-    company: "BrandingMag",
-    period: "Jan 2011 - Jun 2015",
+    role: "Frontend Web3 Intern",
+    company: "VanEck",
+    period: "June 2023 - Aug 2023",
+  },
+  {
+    role: "Full Stack Engineer",
+    company: "TCS (American Express)",
+    period: "Aug 2021 - Aug 2022",
   },
 ];
 
 function Experience() {
   return (
-    <div className="py-20 relative max-w-6xl mx-auto">
+    <div className="py-20 relative max-w-6xl mx-auto" id="experience">
       <h2 className="text-5xl mb-16 text-zinc-100 font-light">Experience</h2>
 
       <div className="flex flex-col divide-y divide-zinc-700/50 mt-8">
