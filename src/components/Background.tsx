@@ -7,7 +7,7 @@ function Background() {
       id="background"
     >
       <p className="text-2xl">
-        Frontend Engineer with expertise in <TextShine>React.js</TextShine> and{" "}
+        Software Engineer with expertise in <TextShine>React.js</TextShine> and{" "}
         <TextShine>Next.js</TextShine>, specializing in building scalable web
         applications.
       </p>

@@ -11,7 +11,7 @@ const KEYFRAMES_NAME = "text-shine-effect";
 
 export function TextShine({
   children,
-  duration = 2.5, // Faster animation for better effect
+  duration = 4, // Faster animation for better effect
   className = "",
   style = {},
 }: TextShineProps) {
@@ -24,7 +24,7 @@ export function TextShine({
       }
       
       .text-shine {
-        padding: 0.5rem 1rem;
+        padding: 0.4rem 1rem;
         border-radius: 2rem;
         background: black;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -80,7 +80,7 @@ export function TextShine({
         ...style,
       }}
     >
-      <span className="shine-text">{children}</span>
+      <span className="shine-text text-xl font-medium">{children}</span>
     </span>
   );
 }

@@ -1,22 +1,27 @@
 function Skills() {
   const skills = {
-    design: [
-      "UX Design",
-      "Product Design",
-      "Consulting",
-      "Design Systems",
-      "Front-End Development",
-      "Workshops",
-      "Workshops",
+    engineering: [
+      "React",
+      "Next.js",
+      "JavaScript",
+      "TypeScript",
+      "Python",
+      "Node.js",
+      "HTML",
+      "CSS",
+      "SASS/SCSS",
+      "Tailwind CSS",
     ],
-    process: [
-      "Design Sprint",
-      "Interaction Design",
-      "User Testing",
-      "Usability Testing",
-      "UX Research",
-      "Leadership",
-      "Mentoring",
+
+    database: [
+      "SQL",
+      "PostgreSQL",
+      "MongoDB",
+      "Redis",
+      "Firebase",
+      "Figma",
+      "Docker",
+      "CI/CD (Github Actions)",
     ],
   };
 
@@ -26,10 +31,10 @@ function Skills() {
 
       <div className="flex flex-col gap-4 mt-8 w-11/12 ">
         <div className="flex flex-wrap gap-4 justify-start">
-          {skills.design.map((skill, index) => (
+          {skills.engineering.map((skill, index) => (
             <div
               key={index}
-              className="bg-neutral-900 backdrop-blur-sm border border-zinc-800/50 rounded-md px-3 py-2.5 text-[15px] text-neutral-200 hover:bg-zinc-800/50 transition-colors"
+              className="bg-neutral-900 backdrop-blur-sm border border-zinc-800/50 rounded-md px-3 py-2.5 text-[15px] text-neutral-200 font-medium hover:bg-zinc-800/50 transition-colors"
             >
               {skill}
             </div>
@@ -37,10 +42,10 @@ function Skills() {
         </div>
 
         <div className="flex flex-wrap gap-4 justify-start">
-          {skills.process.map((skill, index) => (
+          {skills.database.map((skill, index) => (
             <div
               key={index}
-              className="bg-neutral-900 backdrop-blur-sm border border-zinc-800/50 rounded-md px-3 py-2.5 text-[15px] text-neutral-200 hover:bg-zinc-800/50 transition-colors"
+              className="bg-neutral-900 backdrop-blur-sm border border-zinc-800/50 rounded-md px-3 py-2.5 text-[15px] font-medium text-neutral-200 hover:bg-zinc-800/50 transition-colors"
             >
               {skill}
             </div>

@@ -1,5 +1,3 @@
-"use client";
-
 import { useRef } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
@@ -9,8 +7,9 @@ interface ParallaxCardProps {
   title: string;
   description: string;
   imageUrl: string;
+  demoUrl?: string;
+  githubUrl?: string;
   stats?: Array<{ label: string; value: string }>;
-  hasButton?: boolean;
   bgColor?: string; // New prop for background glow color
 }
 
@@ -18,6 +17,8 @@ export default function Project({
   title,
   description,
   imageUrl,
+  demoUrl,
+  githubUrl,
   stats,
   bgColor = "rgb(130, 201, 94)", // Default color if none provided
 }: ParallaxCardProps) {
@@ -113,22 +114,28 @@ export default function Project({
               )}
             </div>
             <div className="mt-8 flex justify-start items-end">
-              <Button
-                variant="outline"
-                className="rounded-full border-neutral-800 p-4 text-white font-medium bg-neutral-900 hover:none cursor-pointer mr-4"
-              >
-                Demo
-              </Button>
-              <Button
-                variant="outline"
-                className="rounded-full border-neutral-800 p-4 text-white font-medium bg-neutral-900 hover:none cursor-pointer"
-              >
-                GitHub
-              </Button>
+              {demoUrl && (
+                <Button
+                  variant="outline"
+                  className="rounded-full border-neutral-800 p-4 text-white font-medium bg-neutral-900 hover:none cursor-pointer mr-4"
+                  onClick={() => window.open(demoUrl, "_blank")}
+                >
+                  Demo
+                </Button>
+              )}
+              {githubUrl && (
+                <Button
+                  variant="outline"
+                  className="rounded-full border-neutral-800 p-4 text-white font-medium bg-neutral-900 hover:none cursor-pointer"
+                  onClick={() => window.open(githubUrl, "_blank")}
+                >
+                  GitHub
+                </Button>
+              )}
             </div>
           </div>
           <div className="flex-1 flex items-start justify-center ">
-            <div className="rounded-lg overflow-hidden w-full h-[60%] md:h-[80%] min-h-[180px] flex items-center justify-center bg-amber-400">
+            <div className="rounded-lg overflow-hidden w-full h-[60%] md:h-[80%] min-h-[180px] flex items-center justify-center">
               <img
                 src={imageUrl}
                 alt={title}
