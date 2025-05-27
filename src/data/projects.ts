@@ -19,7 +19,7 @@ const projects: Project[] = [
     bgColor: "rgb(130, 201, 94)",
   },
   {
-    title: "dm.AI",
+    title: "dm.ai",
     description:
       "With user-centered approach, the goals was to create an intuitive interface for effortless financial management, With user-centered approach, the goals was to create an intuitive interface for effortless financial management",
     imageUrl: "/src/assets/projects/dm.PNG",

@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { CodeXml } from "lucide-react";
+import { ContactModal } from "./ContactModal";
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 py-6 px-4 md:px-8 ">
@@ -37,7 +40,10 @@ const Header = () => {
             Experience
           </a>
 
-          <Button className="ml-2 bg-transparent hover:bg-white/10 text-white rounded-full border border-white/20 px-6">
+          <Button
+            className="ml-2 bg-transparent hover:bg-white/10 text-white rounded-full border border-white/20 px-6"
+            onClick={() => setIsContactModalOpen(true)}
+          >
             Get in Touch
           </Button>
         </nav>
@@ -92,12 +98,23 @@ const Header = () => {
               Experience
             </a>
 
-            <Button className="mt-4 bg-transparent hover:bg-white/10 text-white rounded-full border border-white/20 px-6 py-2 text-lg">
+            <Button
+              className="mt-4 bg-transparent hover:bg-white/10 text-white rounded-full border border-white/20 px-6 py-2 text-lg"
+              onClick={() => {
+                setIsMenuOpen(false);
+                setIsContactModalOpen(true);
+              }}
+            >
               Get in Touch
             </Button>
           </nav>
         </div>
       )}
+
+      <ContactModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+      />
     </header>
   );
 };
