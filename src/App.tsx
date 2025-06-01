@@ -1,12 +1,17 @@
+import { lazy, Suspense } from "react";
 import Header from "@/components/Header";
 import GradientBlur from "@/components/GradientBlur";
 import Hero from "@/components/Hero";
-import ProjectContainer from "./components/ParallaxContainer/ProjectContainer";
-import Background from "./components/Background";
-import Testimonials from "./components/Testimonials";
-import Skills from "./components/Skills";
-import Experience from "./components/Experience";
-import Footer from "./components/Footer";
+
+// Lazy load components that are not immediately visible
+const ProjectContainer = lazy(
+  () => import("./components/ParallaxContainer/ProjectContainer")
+);
+const Background = lazy(() => import("./components/Background"));
+const Testimonials = lazy(() => import("./components/Testimonials"));
+const Skills = lazy(() => import("./components/Skills"));
+const Experience = lazy(() => import("./components/Experience"));
+const Footer = lazy(() => import("./components/Footer"));
 
 function App() {
   return (
@@ -28,12 +33,14 @@ function App() {
       <div className="relative z-10">
         <Header />
         <Hero />
-        <ProjectContainer />
-        <Background />
-        <Testimonials />
-        <Skills />
-        <Experience />
-        <Footer />
+        <Suspense fallback={<div className="h-screen" />}>
+          <ProjectContainer />
+          <Background />
+          <Testimonials />
+          <Skills />
+          <Experience />
+          <Footer />
+        </Suspense>
       </div>
     </div>
   );

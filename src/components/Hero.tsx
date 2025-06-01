@@ -1,4 +1,4 @@
-import profilePic from "@/assets/profile-pic.jpg";
+import profilePic from "@/assets/profile-pic.webp";
 import { Button } from "@/components/ui/button";
 import {
   Tooltip,
@@ -41,7 +41,7 @@ export default function Hero() {
         </span>
       </h1>
       {/* Subheading */}
-      <p className="text-center text-gray-300 max-w-xl text-lg md:text-xl font-normal ">
+      <p className="text-center text-gray-300 max-w-xl text-base md:text-xl font-normal ">
         Crafting lightning-fast frontends and robust full-stack solutions for
         Startups and Enterprises.
       </p>
@@ -60,9 +60,9 @@ export default function Hero() {
         </a>
       </Button>
       {/* Icons Carousel Row */}{" "}
-      <div className="relative mx-auto w-1/2 overflow-hidden mt-10">
+      <div className="relative mx-auto w-full md:w-1/2 overflow-hidden mt-8 md:mt-10">
         <div
-          className="flex gap-8 md:gap-14 items-center animate-carousel group"
+          className="flex gap-4 md:gap-14 items-center animate-carousel group"
           style={{
             width: "max-content",
             animation: "carousel-x 120s linear infinite",
@@ -79,7 +79,7 @@ export default function Hero() {
               <Tooltip key={i}>
                 <TooltipTrigger asChild>
                   <div
-                    className="relative w-20 h-20 rounded-4xl bg-[rgb(18,18,18)] flex items-center justify-center shadow-lg transition-opacity duration-300"
+                    className="relative w-12 h-12 md:h-20 md:w-20 rounded-2xl md:rounded-4xl bg-[rgb(18,18,18)] flex items-center justify-center shadow-lg transition-opacity duration-300"
                     style={{
                       boxShadow: "0 2px 16px 0 rgba(0,0,0,0.10)",
                     }}
@@ -87,7 +87,7 @@ export default function Hero() {
                     <img
                       src={tech.src}
                       alt={`${tech.name} logo`}
-                      className="w-10 h-10 object-contain"
+                      className="h-7 w-7 md:w-10 md:h-10 object-contain"
                     />
                   </div>
                 </TooltipTrigger>

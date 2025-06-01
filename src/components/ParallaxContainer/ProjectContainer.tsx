@@ -4,7 +4,7 @@ import projects from "@/data/projects";
 function ProjectContainer() {
   return (
     <section
-      className="flex flex-col items-center justify-start mt-10"
+      className="flex flex-col items-center justify-start mt-4 md:mt-8"
       id="work"
     >
       {projects.map((project, index) => (

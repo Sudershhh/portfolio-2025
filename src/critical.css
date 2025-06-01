@@ -1,0 +1,70 @@
+/* Only essential resets and utilities */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --black: #000;
+  --white: #fff;
+}
+
+/* Base element styles */
+html,
+body {
+  min-height: 100vh;
+  background-color: var(--black);
+  color: var(--white);
+}
+
+/* Critical styles needed for initial render */
+@import url("satoshi.css");
+
+html,
+body,
+#main {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+  font-family: "Satoshi-Regular";
+}
+
+.bg-black {
+  background-color: rgb(0, 0, 0);
+}
+
+.text-white {
+  color: rgb(255, 255, 255);
+}
+
+.relative {
+  position: relative;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.z-10 {
+  z-index: 10;
+}

@@ -8,40 +8,40 @@ const Header = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 py-6 px-4 md:px-8 ">
+    <header className="fixed top-0 left-0 right-0 z-[60] py-3 px-3 md:py-4 md:px-6 ">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
           <a href="/" className="flex items-center">
-            <div className="w-8 h-8 relative overflow-hidden">
-              <CodeXml color="white" fill="white" width={32} height={32} />
+            <div className="w-6 h-6 md:w-7 md:h-7 relative overflow-hidden">
+              <CodeXml color="white" fill="white" width="100%" height="100%" />
             </div>
           </a>
         </div>
 
         {/* Navigation - Desktop */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-6">
           <a
             href="#work"
-            className="text-[rgb(230,230,230)] hover:text-white transition-colors text-base leading-4 font-semibold"
+            className="text-[rgb(230,230,230)] hover:text-white transition-colors text-sm leading-4 font-medium"
           >
             Work
           </a>
           <a
             href="#background"
-            className="text-[rgb(230,230,230)] hover:text-white transition-colors text-base leading-4 font-semibold"
+            className="text-[rgb(230,230,230)] hover:text-white transition-colors text-sm leading-4 font-medium"
           >
             Background
           </a>
           <a
             href="#experience"
-            className="text-[rgb(230,230,230)] hover:text-white transition-colors text-base leading-4 font-semibold"
+            className="text-[rgb(230,230,230)] hover:text-white transition-colors text-sm leading-4 font-medium"
           >
             Experience
           </a>
 
           <Button
-            className="ml-2 bg-transparent hover:bg-white/10 text-white rounded-full border border-white/20 px-6"
+            className="ml-1 bg-transparent hover:bg-white/10 text-white rounded-full border border-white/20 px-4 py-1.5 text-sm"
             onClick={() => setIsContactModalOpen(true)}
           >
             Get in Touch
@@ -50,15 +50,18 @@ const Header = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white p-2"
+          className="md:hidden text-white p-1.5 relative z-[70]"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         >
           <svg
-            width="24"
-            height="24"
+            width="18"
+            height="18"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            className="transition-transform duration-200 ease-in-out"
+            style={{ transform: isMenuOpen ? "rotate(90deg)" : "none" }}
           >
             <path
               d={
@@ -74,32 +77,32 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden fixed inset-0 bg-black/95 z-40 pt-24">
-          <nav className="flex flex-col items-center space-y-8 p-4">
+        <div className="md:hidden fixed inset-0 bg-black/95 z-[65] pt-16">
+          <nav className="flex flex-col items-center space-y-5 p-4">
             <a
               href="#work"
-              className="text-[rgb(230,230,230)] hover:text-white text-sm leading-4 font-semibold"
+              className="text-[rgb(230,230,230)] hover:text-white text-sm leading-4 font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
               Work
             </a>
             <a
               href="#background"
-              className="text-[rgb(230,230,230)] hover:text-white text-sm leading-4 font-semibold"
+              className="text-[rgb(230,230,230)] hover:text-white text-sm leading-4 font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
               Background
             </a>
             <a
               href="#experience"
-              className="text-[rgb(230,230,230)] hover:text-white text-sm leading-4 font-semibold"
+              className="text-[rgb(230,230,230)] hover:text-white text-sm leading-4 font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
               Experience
             </a>
 
             <Button
-              className="mt-4 bg-transparent hover:bg-white/10 text-white rounded-full border border-white/20 px-6 py-2 text-lg"
+              className="mt-2 bg-transparent hover:bg-white/10 text-white rounded-full border border-white/20 px-4 py-1.5 text-sm"
               onClick={() => {
                 setIsMenuOpen(false);
                 setIsContactModalOpen(true);

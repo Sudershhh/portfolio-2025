@@ -1,10 +1,150 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="bg-black">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sri's Portfolio</title>
+
+    <!-- Preload critical assets -->
+    <link
+      rel="preload"
+      href="/fonts/Satoshi-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="/src/assets/profile-pic.webp"
+      fetchpriority="high"
+    />
+
+    <!-- Critical CSS -->
+    <style>
+      /* Font face declaration */
+      @font-face {
+        font-family: "Satoshi-Regular";
+        src: url("/fonts/Satoshi-Regular.woff2") format("woff2");
+        font-display: block;
+      }
+
+      /* Prevent FOUC and layout shifts */
+      html {
+        background-color: #000;
+        color-scheme: dark;
+      }
+
+      body {
+        margin: 0;
+        background-color: #000;
+        color: #fff;
+        font-family:
+          "Satoshi-Regular",
+          -apple-system,
+          BlinkMacSystemFont,
+          system-ui,
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+        opacity: 0;
+      }
+
+      body.fonts-loaded {
+        opacity: 1;
+        transition: opacity 0.2s ease-out;
+      }
+
+      #root {
+        min-height: 100vh;
+        background-color: #000;
+      }
+
+      /* Critical layout classes */
+      .hero-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 3.5rem;
+        min-height: 100vh;
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        overflow-x: hidden;
+      }
+
+      @media (min-width: 768px) {
+        .hero-section {
+          padding-top: 8rem;
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero-section {
+          min-height: 65vh;
+        }
+        .profile-container {
+          margin: 5rem 0;
+        }
+      }
+
+      /* Profile image container */
+      .profile-container {
+        width: 7rem;
+        height: 7rem;
+        position: relative;
+        margin: 1.5rem 0;
+        contain: strict;
+        contain-intrinsic-size: 7rem;
+      }
+
+      @media (min-width: 768px) {
+        .profile-container {
+          width: 10rem;
+          height: 10rem;
+          margin: 2rem 0;
+          contain-intrinsic-size: 10rem;
+        }
+      }
+
+      .profile-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 9999px;
+        object-fit: cover;
+        box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.25);
+      }
+
+      /* Mobile menu fixes */
+      .mobile-menu-button {
+        position: relative;
+        z-index: 70;
+      }
+
+      .mobile-menu {
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.95);
+        z-index: 65;
+        padding-top: 5rem;
+      }
+    </style>
+
+    <!-- Font loading script -->
+    <script>
+      if ("fonts" in document) {
+        Promise.all([document.fonts.load("1em Satoshi-Regular")]).then(() => {
+          document.body.classList.add("fonts-loaded");
+        });
+      } else {
+        document.body.classList.add("fonts-loaded");
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
