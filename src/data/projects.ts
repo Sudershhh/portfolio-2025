@@ -135,7 +135,7 @@ const projects: Project[] = [
   {
     title: "dm.ai",
     description:
-      "With user-centered approach, the goals was to create an intuitive interface for effortless financial management, With user-centered approach, the goals was to create an intuitive interface for effortless financial management",
+      "A practical Instagram automation tool that helps businesses manage their social media presence. Features include automated responses to comments and DMs, customizable message templates, and AI-powered conversation handling for better engagement with followers.",
     imageUrl: "/src/assets/projects/dm.PNG",
     demoUrl: "https://saas-dm-automations.vercel.app/",
     githubUrl: "https://github.com/Sudershhh/saas-dm-automations",
@@ -144,7 +144,7 @@ const projects: Project[] = [
   {
     title: "AIO Analysis",
     description:
-      "Focus was to create a user-friendly interface that simplified the process of accessing premium operational web scraping proxies.",
+      "A tool for web developers to analyze and improve their site's crawler accessibility. Checks robots.txt configurations, provides SEO recommendations, and helps optimize site structure for better search engine visibility.",
     imageUrl: "/src/assets/projects/AIO.PNG",
     demoUrl: "https://aio-analysis.vercel.app",
     githubUrl: "https://github.com/Sudershhh/AIO-Analysis",
@@ -153,7 +153,7 @@ const projects: Project[] = [
   {
     title: "Invoice AI",
     description:
-      "Creating an accessible health monitoring solution for patients with chronic conditions.",
+      "A straightforward invoice processing tool that uses AI to extract data from invoices. Simplifies data entry, organizes financial documents, and helps businesses manage their invoicing workflow more efficiently.",
     imageUrl: "/src/assets/projects/Invoice ai.PNG",
     demoUrl: "https://invoice-intelligence.vercel.app",
     githubUrl: "https://github.com/Sudershhh/invoice-intelligence",
@@ -162,7 +162,7 @@ const projects: Project[] = [
   {
     title: "Apple Landing Page",
     description:
-      "Creating an accessible health monitoring solution for patients with chronic conditions.",
+      "A responsive recreation of Apple's homepage featuring smooth animations and clean design. Built with modern CSS and focusing on performance and mobile-first approach.",
     imageUrl: "/src/assets/projects/Apple.webp",
     demoUrl: "https://apple-landing-page.netlify.app",
     githubUrl: "https://github.com/Sudershhh/Apple-Landing-Page",
