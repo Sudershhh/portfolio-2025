@@ -6,6 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sri's Portfolio</title>
 
+    <!-- Critical CSS -->
+    <style>
+      /* This helps prevent layout shifts while fonts load */
+      .font-loading * {
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+      }
+      .fonts-loaded * {
+        opacity: 1;
+      }
+    </style>
+
     <!-- Preload critical assets -->
     <link
       rel="preload"

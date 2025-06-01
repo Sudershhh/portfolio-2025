@@ -2,16 +2,8 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 
-// Function to load non-critical CSS
-const loadStyles = () => {
-  return new Promise<void>((resolve) => {
-    const link = document.createElement("link");
-    link.rel = "stylesheet";
-    link.href = "/src/index.css";
-    link.onload = () => resolve();
-    document.head.appendChild(link);
-  });
-};
+// Import styles directly
+import "./index.css";
 
 const init = async () => {
   // Wait for critical font
@@ -24,9 +16,6 @@ const init = async () => {
       <App />
     </StrictMode>
   );
-
-  // Load non-critical styles
-  await loadStyles();
 };
 
 // Start initialization

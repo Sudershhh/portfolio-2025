@@ -12,30 +12,9 @@ export default defineConfig({
     },
   },
   build: {
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          "react-vendor": ["react", "react-dom"],
-          "framer-motion": ["framer-motion"],
-          "ui-components": [
-            "@/components/ui/button",
-            "@/components/ui/card",
-            "@/components/ui/dialog",
-            "@/components/ui/tooltip",
-          ],
-        },
-      },
-    },
     chunkSizeWarningLimit: 1000,
-    cssCodeSplit: true,
+    cssCodeSplit: false,
     sourcemap: false,
-    minify: "terser",
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-      },
-    },
   },
   server: {
     open: true,
