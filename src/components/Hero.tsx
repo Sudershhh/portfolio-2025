@@ -79,7 +79,7 @@ export default function Hero() {
               <Tooltip key={i}>
                 <TooltipTrigger asChild>
                   <div
-                    className="relative w-20 h-20 rounded-4xl bg-neutral-900 flex items-center justify-center shadow-lg transition-opacity duration-300"
+                    className="relative w-20 h-20 rounded-4xl bg-[rgb(18,18,18)] flex items-center justify-center shadow-lg transition-opacity duration-300"
                     style={{
                       boxShadow: "0 2px 16px 0 rgba(0,0,0,0.10)",
                     }}
@@ -108,9 +108,9 @@ export default function Hero() {
               </Tooltip>
             ))}
           </TooltipProvider>
-        </div>
-        <div className="pointer-events-none absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-transparent to-transparent z-10" />
-        <div className="pointer-events-none absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-transparent to-transparent z-10" />
+        </div>{" "}
+        <div className="pointer-events-none absolute left-0 top-0 h-full w-24 bg-gradient-to-r z-10" />
+        <div className="pointer-events-none absolute right-0 top-0 h-full w-24 bg-gradient-to-l  z-10" />
       </div>
     </section>
   );
