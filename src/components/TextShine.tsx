@@ -29,6 +29,7 @@ export function TextShine({
         background: black;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         transition: all 0.2s ease;
+        font-weight:medium;
       }
 
       .text-shine:hover {

@@ -1,45 +1,13 @@
 import profilePic from "@/assets/profile-pic.jpg";
 import { Button } from "@/components/ui/button";
-import htmlLogo from "@/assets/html.svg";
-import cssLogo from "@/assets/css.svg";
-import tailwindLogo from "@/assets/tailwind.svg";
-import reactLogo from "@/assets/react.svg";
-import reduxLogo from "@/assets/redux.svg";
-import nextjsLogo from "@/assets/nextjs.svg";
-import pythonLogo from "@/assets/python.svg";
-import figmaLogo from "@/assets/figma.svg";
-import javaScriptLogo from "@/assets/javascript.svg";
-import typescriptLogo from "@/assets/typescript.svg";
-import nodeLogo from "@/assets/nodejs.svg";
-import mongoLogo from "@/assets/mongodb.svg";
-import expressLogo from "@/assets/express.svg";
-import postgresLogo from "@/assets/postgresql.svg";
-import redisLogo from "@/assets/redis.svg";
-import firebaseLogo from "@/assets/firebase.svg";
-import awsLogo from "@/assets/aws.svg";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import resume from "@/assets/Sri_Sudersan_Resume.pdf";
-
-const icons = [
-  htmlLogo,
-  cssLogo,
-  figmaLogo,
-  tailwindLogo,
-  javaScriptLogo,
-  typescriptLogo,
-  reactLogo,
-  nextjsLogo,
-  pythonLogo,
-  nodeLogo,
-  mongoLogo,
-  reduxLogo,
-  expressLogo,
-  postgresLogo,
-  redisLogo,
-  firebaseLogo,
-  awsLogo,
-];
-
-const carouselIcons = [...icons, ...icons];
+import { carouselIcons } from "@/data/projects";
 
 export default function Hero() {
   return (
@@ -54,7 +22,6 @@ export default function Hero() {
           imageRendering: "auto", // Prevents pixelation
         }}
       />
-
       <h1
         className="text-center text-4xl md:text-5xl font-semibold leading-tight mb-8"
         style={{ letterSpacing: "-0.02em" }}
@@ -73,15 +40,13 @@ export default function Hero() {
           Sri Sudersan
         </span>
       </h1>
-
       {/* Subheading */}
       <p className="text-center text-gray-300 max-w-xl text-lg md:text-xl font-normal ">
         Crafting lightning-fast frontends and robust full-stack solutions for
         Startups and Enterprises.
       </p>
-
       <Button
-        className="bg-black text-white font-medium py-3 px-6 rounded-full shadow-none border-none outline-none h-auto min-h-0 min-w-0 text-base md:text-lg my-8 hover:bg-neutral-900 transition-colors w-auto"
+        className="bg-black text-white font-medium py-3 px-6 rounded-full shadow-none border-none outline-none h-auto min-h-0 min-w-0 text-base md:text-base my-8 hover:bg-neutral-900 transition-colors w-auto"
         asChild
       >
         <a
@@ -94,31 +59,55 @@ export default function Hero() {
           Download Resume
         </a>
       </Button>
-      {/* Icons Carousel Row */}
+      {/* Icons Carousel Row */}{" "}
       <div className="relative mx-auto w-1/2 overflow-hidden mt-10">
         <div
-          className="flex gap-8 md:gap-14 items-center animate-carousel"
+          className="flex gap-8 md:gap-14 items-center animate-carousel group"
           style={{
             width: "max-content",
-            animation: "carousel-x 80s linear infinite",
+            animation: "carousel-x 120s linear infinite",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.animationPlayState = "paused";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.animationPlayState = "running";
           }}
         >
-          {carouselIcons.map((logo, i) => (
-            <div
-              key={i}
-              className="w-20 h-20 rounded-4xl bg-neutral-900 flex items-center justify-center shadow-lg transition-opacity duration-700"
-              style={{
-                boxShadow: "0 2px 16px 0 rgba(0,0,0,0.10)",
-                opacity: 1,
-              }}
-            >
-              <img
-                src={logo}
-                alt="tech logo"
-                className="w-10 h-10 object-contain"
-              />
-            </div>
-          ))}
+          <TooltipProvider>
+            {carouselIcons.map((tech, i) => (
+              <Tooltip key={i}>
+                <TooltipTrigger asChild>
+                  <div
+                    className="relative w-20 h-20 rounded-4xl bg-neutral-900 flex items-center justify-center shadow-lg transition-opacity duration-300"
+                    style={{
+                      boxShadow: "0 2px 16px 0 rgba(0,0,0,0.10)",
+                    }}
+                  >
+                    <img
+                      src={tech.src}
+                      alt={`${tech.name} logo`}
+                      className="w-10 h-10 object-contain"
+                    />
+                  </div>
+                </TooltipTrigger>
+                <TooltipContent
+                  side="top"
+                  sideOffset={6}
+                  className="bg-white/95  border-none shadow-lg px-3 py-2"
+                >
+                  <div className="flex flex-col gap-0.5">
+                    <p className="font-semibold text-sm tracking-wide text-black/90 dark:text-white/90">
+                      {tech.name}
+                    </p>
+                    <p className="text-xs text-gray-600 dark:text-gray-300 max-w-[160px] leading-tight">
+                      {tech.description}
+                    </p>
+                  </div>
+                </TooltipContent>
+              </Tooltip>
+            ))}
+          </TooltipProvider>
         </div>
         <div className="pointer-events-none absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-transparent to-transparent z-10" />
         <div className="pointer-events-none absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-transparent to-transparent z-10" />

@@ -15,13 +15,14 @@ const handler: Handler = async (event) => {
   try {
     const { from, subject, body } = JSON.parse(event.body || "{}");
 
-    await resend.emails.send({
+    const mailSentResponse = await resend.emails.send({
       from,
       to: toAddress!,
       subject,
       html: `<p>${body}</p>`,
     });
 
+    console.log("After Sending", mailSentResponse);
     return {
       statusCode: 200,
       body: JSON.stringify({ success: true }),

@@ -28,7 +28,7 @@ const experiences = [
 
 function Experience() {
   return (
-    <div className="py-20 relative max-w-6xl mx-auto" id="experience">
+    <div className="py-20 relative max-w-5xl mx-auto" id="experience">
       <h2 className="text-5xl mb-16 text-zinc-100 font-normal tracking-tight">
         Experience
       </h2>

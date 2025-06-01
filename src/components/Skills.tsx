@@ -26,10 +26,10 @@ function Skills() {
   };
 
   return (
-    <div className="py-20 relative max-w-6xl mx-auto ">
+    <div className="py-20 relative max-w-5xl mx-auto ">
       <h2 className="text-5xl mb-10 text-zinc-100 font-extralight">Skills</h2>
 
-      <div className="flex flex-col gap-4 mt-8 w-11/12 ">
+      <div className="flex flex-col gap-4 mt-8 w-full ">
         <div className="flex flex-wrap gap-4 justify-start">
           {skills.engineering.map((skill, index) => (
             <div

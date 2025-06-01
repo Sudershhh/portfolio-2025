@@ -340,10 +340,15 @@ button {
     transform: translateX(0%);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 
 .animate-carousel {
-  animation: carousel-x 18s linear infinite;
+  animation: carousel-x 120s linear infinite;
+  transition: all 0.3s ease-out;
+}
+
+.animate-carousel:hover {
+  animation-play-state: paused;
 }
