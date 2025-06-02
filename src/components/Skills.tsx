@@ -36,10 +36,12 @@ function Skills() {
 
   return (
     <div className="py-20 relative max-w-5xl mx-auto mt-8">
-      <h2 className="text-5xl mb-10 text-zinc-100 font-extralight">Skills</h2>
+      <h2 className="text-5xl mb-10 text-zinc-100 font-extralight text-center sm:text-start">
+        Skills
+      </h2>
 
-      <div className="flex flex-col gap-4 mt-8 w-full ">
-        <div className="flex flex-wrap gap-4 justify-start">
+      <div className="flex flex-col gap-4 mt-8 w-full justify-center items-center sm:justify-start sm:items-start">
+        <div className="flex flex-wrap gap-4 justify-center sm:justify-start">
           {skills.overall.map((skill, index) => (
             <div
               key={index}
@@ -50,7 +52,7 @@ function Skills() {
           ))}
         </div>
 
-        <div className="flex flex-wrap gap-4 justify-start">
+        <div className="flex flex-wrap gap-4 justify-center sm:justify-start">
           {skills.engineering.map((skill, index) => (
             <div
               key={index}
@@ -61,7 +63,7 @@ function Skills() {
           ))}
         </div>
 
-        <div className="flex flex-wrap gap-4 justify-start">
+        <div className="flex flex-wrap gap-4 justify-center sm:justify-start">
           {skills.database.map((skill, index) => (
             <div
               key={index}

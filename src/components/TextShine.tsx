@@ -75,13 +75,15 @@ export function TextShine({
 
   return (
     <span
-      className={`text-shine border-1 border-neutral-600 ${className}`.trim()}
+      className={`text-shine border-1 px-2 py-1.5 border-neutral-600 ${className}`.trim()}
       style={{
         display: "inline-block",
         ...style,
       }}
     >
-      <span className="shine-text text-xl font-medium">{children}</span>
+      <span className="shine-text text-base md:text-xl font-medium">
+        {children}
+      </span>
     </span>
   );
 }

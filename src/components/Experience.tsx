@@ -29,18 +29,18 @@ const experiences = [
 function Experience() {
   return (
     <div className="py-20 relative max-w-5xl mx-auto" id="experience">
-      <h2 className="text-5xl mb-16 text-zinc-100 font-normal tracking-tight">
+      <h2 className="text-5xl mb-16 text-zinc-100 font-normal tracking-tigh text-center sm:text-start">
         Experience
       </h2>
 
-      <div className="flex flex-col divide-y-2 divide-zinc-700/50 mt-8">
+      <div className="flex flex-col divide-y-2 divide-zinc-700/50 mt-2 md:mt-8 p-4">
         {experiences.map((exp, index) => (
           <div
             key={index}
-            className="flex items-center justify-between group py-8 relative  transition-all duration-300"
+            className="flex items-center justify-between group py-6 md:py-8 relative  transition-all duration-300"
           >
             <div className="space-y-1">
-              <h3 className="text-[20px] text-zinc-400 font-light tracking-wide">
+              <h3 className="text-base md:text-[20px] text-zinc-400 font-light tracking-wide">
                 {exp.role}
               </h3>
             </div>
