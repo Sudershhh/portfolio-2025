@@ -156,7 +156,7 @@ export default function Project({
               {demoUrl && (
                 <Button
                   variant="outline"
-                  className="rounded-full cursor-pointer border-neutral-800 px-6 py-2 sm:p-4 text-white font-medium bg-neutral-900 hover:bg-neutral-800"
+                  className="rounded-full cursor-pointer border-neutral-800 px-6 py-2 sm:p-4 text-white font-medium bg-neutral-900 hover:bg-neutral-800 hover:text-white"
                   onClick={() => window.open(demoUrl, "_blank")}
                 >
                   Demo
@@ -165,7 +165,7 @@ export default function Project({
               {githubUrl && (
                 <Button
                   variant="outline"
-                  className="rounded-full cursor-pointer border-neutral-800 px-6 py-2 sm:p-4 text-white font-medium bg-neutral-900 hover:bg-neutral-800"
+                  className="rounded-full cursor-pointer border-neutral-800 px-6 py-2 sm:p-4 text-white font-medium bg-neutral-900 hover:bg-neutral-800 hover:text-white"
                   onClick={() => window.open(githubUrl, "_blank")}
                 >
                   GitHub

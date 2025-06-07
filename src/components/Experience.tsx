@@ -33,7 +33,7 @@ function Experience() {
         Experience
       </h2>
 
-      <div className="flex flex-col divide-y-2 divide-zinc-700/50 mt-2 md:mt-8 p-4">
+      <div className="flex flex-col divide-y-2 divide-zinc-700/50 mt-2 md:mt-8">
         {experiences.map((exp, index) => (
           <div
             key={index}
