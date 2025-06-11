@@ -68,3 +68,37 @@ body,
 .z-10 {
   z-index: 10;
 }
+
+@keyframes wave1 {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes wave2 {
+  0% {
+    transform: rotate(180deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(540deg);
+  }
+}
+
+.animate-wave1 {
+  animation: wave1 2s linear infinite;
+  transform-origin: center;
+}
+
+.animate-wave2 {
+  animation: wave2 2s linear infinite;
+  transform-origin: center;
+}

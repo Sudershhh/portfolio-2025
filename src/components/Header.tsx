@@ -1,11 +1,46 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { CodeXml } from "lucide-react";
 import { ContactModal } from "./ContactModal";
+import { WaveButton } from "@/components/ui/WaveButton";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true); // Set default to true
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    // Create audio element
+    audioRef.current = new Audio("/src/assets/ambience.mp3");
+    audioRef.current.loop = true;
+
+    // Auto-play when component mounts
+    audioRef.current.play().catch((error) => {
+      // Handle auto-play restriction by browsers
+      console.log("Auto-play was prevented:", error);
+      setIsPlaying(false);
+    });
+
+    // Cleanup function
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current = null;
+      }
+    };
+  }, []);
+
+  const toggleSound = () => {
+    if (!audioRef.current) return;
+
+    if (isPlaying) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-[60] py-3 px-3 md:py-4 md:px-6 ">
@@ -23,29 +58,31 @@ const Header = () => {
         <nav className="hidden md:flex items-center space-x-6">
           <a
             href="#work"
-            className="text-[rgb(230,230,230)] hover:text-white transition-colors text-sm leading-4 font-medium"
+            className="text-[rgb(230,230,230)] hover:text-white transition-colors text-base leading-4 font-medium"
           >
             Work
           </a>
           <a
             href="#background"
-            className="text-[rgb(230,230,230)] hover:text-white transition-colors text-sm leading-4 font-medium"
+            className="text-[rgb(230,230,230)] hover:text-white transition-colors text-base leading-4 font-medium"
           >
             Background
           </a>
           <a
             href="#experience"
-            className="text-[rgb(230,230,230)] hover:text-white transition-colors text-sm leading-4 font-medium"
+            className="text-[rgb(230,230,230)] hover:text-white transition-colors text-base leading-4 font-medium"
           >
             Experience
           </a>
 
           <Button
-            className="ml-1 bg-transparent hover:bg-white/10 text-white rounded-full border border-white/20 px-4 py-1.5 text-sm"
+            className="ml-1 cursor-pointer bg-transparent hover:bg-white/10 text-white rounded-full border border-white/20 px-3 py-1 text-xs"
             onClick={() => setIsContactModalOpen(true)}
           >
             Get in Touch
           </Button>
+
+          <WaveButton isPlaying={isPlaying} onClick={toggleSound} />
         </nav>
 
         {/* Mobile Menu Button */}

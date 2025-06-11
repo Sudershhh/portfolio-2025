@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import Header from "@/components/Header";
-import GradientBlur from "@/components/GradientBlur";
 import Hero from "@/components/Hero";
+import OptimizedGradientBlur from "./components/OptimizedGradientBlur";
 
 // Lazy load components that are not immediately visible
 const ProjectContainer = lazy(
@@ -29,7 +29,7 @@ function App() {
           borderRadius: 0,
         }}
       />
-      <GradientBlur />
+      <OptimizedGradientBlur />
       <div className="relative z-10">
         <Header />
         <Hero />
