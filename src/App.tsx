@@ -1,12 +1,12 @@
 import { lazy, Suspense } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import OptimizedGradientBlur from "./components/OptimizedGradientBlur";
-
+import GradientBlur from "./components/GradientBlur";
+import ProjectContainer from "./components/ParallaxContainer/ProjectContainer";
 // Lazy load components that are not immediately visible
-const ProjectContainer = lazy(
-  () => import("./components/ParallaxContainer/ProjectContainer")
-);
+// const ProjectContainer = lazy(
+//   () => import("./components/ParallaxContainer/ProjectContainer")
+// );
 const Background = lazy(() => import("./components/Background"));
 const Testimonials = lazy(() => import("./components/Testimonials"));
 const Skills = lazy(() => import("./components/Skills"));
@@ -29,7 +29,7 @@ function App() {
           borderRadius: 0,
         }}
       />
-      <OptimizedGradientBlur />
+      <GradientBlur />
       <div className="relative z-10">
         <Header />
         <Hero />

@@ -102,7 +102,7 @@ const BLOB_CONFIG = [
   },
   {
     color: { r: 30, g: 160, b: 240 }, // Sky Blue
-    alpha: 0.23, // Increased opacity
+    alpha: 0.16, // Increased opacity
     baseRadius: 0.27,
     speed: 0.0024,
     offset: (7 * Math.PI) / 8,
@@ -133,7 +133,7 @@ const BLOB_CONFIG = [
   },
   {
     color: { r: 150, g: 130, b: 255 }, // Periwinkle
-    alpha: 0.26,
+    alpha: 0.16,
     baseRadius: 0.34,
     speed: 0.0021,
     offset: (4 * Math.PI) / 5,
@@ -151,7 +151,7 @@ const BLOB_CONFIG = [
   },
   {
     color: { r: 70, g: 90, b: 230 }, // Royal Blue
-    alpha: 0.29,
+    alpha: 0.19,
     baseRadius: 0.26,
     speed: 0.0023,
     offset: (2 * Math.PI) / 7,
