@@ -146,20 +146,37 @@
         padding-top: 5rem;
       }
     </style>
-
-    <!-- Font loading script -->
-    <script>
-      if ("fonts" in document) {
-        Promise.all([document.fonts.load("1em Satoshi-Regular")]).then(() => {
-          document.body.classList.add("fonts-loaded");
-        });
-      } else {
-        document.body.classList.add("fonts-loaded");
-      }
-    </script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <!-- Font loading script -->
+    <script>
+      function handleFontLoading() {
+        const body = document.body;
+        if (!body) return;
+
+        if ("fonts" in document) {
+          Promise.all([document.fonts.load("1em Satoshi-Regular")])
+            .then(() => {
+              body.classList.add("fonts-loaded");
+            })
+            .catch(() => {
+              // If font loading fails, still show content
+              body.classList.add("fonts-loaded");
+            });
+        } else {
+          // Fallback for browsers that don't support font loading API
+          body.classList.add("fonts-loaded");
+        }
+      }
+
+      // Run once DOM is ready
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", handleFontLoading);
+      } else {
+        handleFontLoading();
+      }
+    </script>
   </body>
 </html>
