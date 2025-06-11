@@ -9,18 +9,13 @@ const Header = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(true); // Set default to true
   const audioRef = useRef<HTMLAudioElement | null>(null);
-
   useEffect(() => {
-    // Create audio element
-    audioRef.current = new Audio("/src/assets/ambience.mp3");
+    // Create audio element with the correct public path
+    audioRef.current = new Audio("/ambience.mp3");
     audioRef.current.loop = true;
 
-    // Auto-play when component mounts
-    audioRef.current.play().catch((error) => {
-      // Handle auto-play restriction by browsers
-      console.log("Auto-play was prevented:", error);
-      setIsPlaying(false);
-    });
+    // Don't autoplay immediately, wait for user interaction
+    setIsPlaying(false);
 
     // Cleanup function
     return () => {
