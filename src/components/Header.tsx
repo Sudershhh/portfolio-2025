@@ -3,11 +3,19 @@ import { Button } from "@/components/ui/button";
 import { CodeXml } from "lucide-react";
 import { ContactModal } from "./ContactModal";
 import { WaveButton } from "@/components/ui/WaveButton";
+import { useScrollTo } from "@/lib/useScrollTo";
+import type { SectionRefs } from "@/types/section";
 
-const Header = () => {
+interface HeaderProps {
+  sectionRefs: SectionRefs;
+}
+
+const Header = ({ sectionRefs }: HeaderProps) => {
+  const { scrollToSection } = useScrollTo();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(true); // Set default to true
+  const [scrolled, setScrolled] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   useEffect(() => {
     // Create audio element with the correct public path
@@ -26,6 +34,17 @@ const Header = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setScrolled(scrollPosition > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const toggleSound = () => {
     if (!audioRef.current) return;
 
@@ -38,7 +57,10 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-[60] py-3 px-3 md:py-4 md:px-6 ">
+    <header
+      className={`fixed top-0 left-0 right-0 z-[2000] py-3 px-3 md:py-4 md:px-6 transition-colors duration-200 
+      ${scrolled ? "bg-black/20 backdrop-blur-md" : "bg-transparent"}`}
+    >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
@@ -51,24 +73,24 @@ const Header = () => {
 
         {/* Navigation - Desktop */}
         <nav className="hidden md:flex items-center space-x-6">
-          <a
-            href="#work"
-            className="text-[rgb(230,230,230)] hover:text-white transition-colors text-base leading-4 font-medium"
+          <button
+            onClick={() => scrollToSection(sectionRefs.workRef)}
+            className="text-[rgb(230,230,230)] cursor-pointer hover:text-white transition-colors text-base leading-4 font-medium"
           >
             Work
-          </a>
-          <a
-            href="#background"
-            className="text-[rgb(230,230,230)] hover:text-white transition-colors text-base leading-4 font-medium"
+          </button>
+          <button
+            onClick={() => scrollToSection(sectionRefs.backgroundRef)}
+            className="text-[rgb(230,230,230)] cursor-pointer hover:text-white transition-colors text-base leading-4 font-medium"
           >
             Background
-          </a>
-          <a
-            href="#experience"
-            className="text-[rgb(230,230,230)] hover:text-white transition-colors text-base leading-4 font-medium"
+          </button>
+          <button
+            onClick={() => scrollToSection(sectionRefs.experienceRef)}
+            className="text-[rgb(230,230,230)] cursor-pointer hover:text-white transition-colors text-base leading-4 font-medium"
           >
             Experience
-          </a>
+          </button>
 
           <Button
             className="ml-1 cursor-pointer bg-transparent hover:bg-white/10 text-white rounded-full border border-white/20 px-3 py-1 text-xs"
@@ -111,27 +133,33 @@ const Header = () => {
       {isMenuOpen && (
         <div className="md:hidden fixed inset-0 bg-black/95 z-[65] pt-16">
           <nav className="flex flex-col items-center space-y-5 p-4">
-            <a
-              href="#work"
+            <button
               className="text-[rgb(230,230,230)] hover:text-white text-sm leading-4 font-medium"
-              onClick={() => setIsMenuOpen(false)}
+              onClick={() => {
+                scrollToSection(sectionRefs.workRef);
+                setIsMenuOpen(false);
+              }}
             >
               Work
-            </a>
-            <a
-              href="#background"
+            </button>
+            <button
               className="text-[rgb(230,230,230)] hover:text-white text-sm leading-4 font-medium"
-              onClick={() => setIsMenuOpen(false)}
+              onClick={() => {
+                scrollToSection(sectionRefs.backgroundRef);
+                setIsMenuOpen(false);
+              }}
             >
               Background
-            </a>
-            <a
-              href="#experience"
+            </button>
+            <button
               className="text-[rgb(230,230,230)] hover:text-white text-sm leading-4 font-medium"
-              onClick={() => setIsMenuOpen(false)}
+              onClick={() => {
+                scrollToSection(sectionRefs.experienceRef);
+                setIsMenuOpen(false);
+              }}
             >
               Experience
-            </a>
+            </button>
 
             <Button
               className="mt-2 bg-transparent hover:bg-white/10 text-white rounded-full border border-white/20 px-4 py-1.5 text-sm"

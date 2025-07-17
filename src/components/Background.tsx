@@ -2,10 +2,7 @@ import { TextShine } from "./TextShine";
 
 function Background() {
   return (
-    <div
-      className="flex flex-col items-center justify-center space-y-4 p-4 text-center text-zinc-100 scroll-mt-[100px]"
-      id="background"
-    >
+    <div className="flex flex-col items-center justify-center space-y-4 p-4 text-center text-zinc-100 scroll-mt-[100px]">
       <p className=" text-base md:text-2xl">
         Software Engineer with expertise in <TextShine>React.js</TextShine> and{" "}
         <TextShine>Next.js</TextShine>, specializing in building scalable web

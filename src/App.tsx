@@ -1,4 +1,5 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useRef } from "react";
+import type { SectionRefs } from "./types/section";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import GradientBlur from "./components/GradientBlur";
@@ -14,6 +15,15 @@ const Experience = lazy(() => import("./components/Experience"));
 const Footer = lazy(() => import("./components/Footer"));
 
 function App() {
+  const workRef = useRef<HTMLElement>(null);
+  const backgroundRef = useRef<HTMLElement>(null);
+  const experienceRef = useRef<HTMLElement>(null);
+
+  const sectionRefs: SectionRefs = {
+    workRef,
+    backgroundRef,
+    experienceRef,
+  };
   return (
     <div className="relative min-h-screen bg-black">
       <div
@@ -31,14 +41,20 @@ function App() {
       />
       <GradientBlur />
       <div className="relative z-10">
-        <Header />
+        <Header sectionRefs={sectionRefs} />
         <Hero />
         <Suspense fallback={<div className="h-screen" />}>
-          <ProjectContainer />
-          <Background />
+          <section ref={workRef}>
+            <ProjectContainer />
+          </section>
+          <section ref={backgroundRef}>
+            <Background />
+          </section>
           <Testimonials />
           <Skills />
-          <Experience />
+          <section ref={experienceRef}>
+            <Experience />
+          </section>
           <Footer />
         </Suspense>
       </div>
