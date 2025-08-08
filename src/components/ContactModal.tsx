@@ -53,12 +53,12 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
       }
 
       // Handle success
-      toast.success("Message sent successfully!");
+      toast.success("Thanks for reaching out, I'll get back to you asap!");
       reset();
       onClose();
     } catch (error) {
-      console.error("Error sending message:", error);
-      toast.error("Failed to send message. Please try again.");
+      console.error("Error sending Email:", error);
+      toast.error("Failed to send email. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -66,7 +66,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
   return (
     <>
-      <Toaster position="top-right" />
+      <Toaster position="top-right" richColors />
       <Dialog open={isOpen} onOpenChange={onClose}>
         <DialogContent className="w-[95vw] max-w-[425px] max-h-[90vh] bg-[#0a0a0a] text-white border border-zinc-800 p-4 sm:p-6 overflow-hidden">
           <DialogHeader className="pb-4">
