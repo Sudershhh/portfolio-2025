@@ -1,7 +1,7 @@
 const experiences = [
   {
     role: "Founding Engineer",
-    company: "Kivane Tech (Dataparts)",
+    company: "dataparts.ai",
     period: "Dec 2024 - Present",
   },
   {
