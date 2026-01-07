@@ -16,11 +16,14 @@ export default function Hero() {
       <img
         src={profilePic}
         alt="Profile"
+        width={160}
+        height={160}
         className="w-40 h-40 md:w-40 md:h-40 rounded-full border-none shadow-lg object-cover my-8 relative z-10"
         style={{
           boxShadow: "0 4px 32px 0 rgba(0,0,0,0.25)",
           imageRendering: "auto", // Prevents pixelation
         }}
+        fetchPriority="high"
       />
       <h1
         className="text-center text-4xl md:text-5xl font-semibold leading-tight mb-8"

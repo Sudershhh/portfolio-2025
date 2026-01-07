@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sri-sudersan.com/sitemap.xml
+

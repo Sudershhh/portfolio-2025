@@ -4,7 +4,19 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio of Sri Sudersan - Full Stack Engineer specializing in React.js and Next.js. 4+ years of experience building scalable web applications and responsive interfaces. Currently Founding Engineer at DataParts."
+    />
     <title>Sri's Portfolio</title>
+
+    <!-- Preconnect to required origins for faster resource loading -->
+    <link rel="preconnect" href="https://framerusercontent.com" />
+    <link rel="preconnect" href="https://www.google-analytics.com" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://framerusercontent.com" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
     <!-- Critical CSS -->
     <style>
@@ -147,19 +159,6 @@
       }
     </style>
   </head>
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-PP3QX79H4M"
-  ></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-
-    gtag("config", "G-PP3QX79H4M");
-  </script>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
@@ -189,6 +188,34 @@
         document.addEventListener("DOMContentLoaded", handleFontLoading);
       } else {
         handleFontLoading();
+      }
+    </script>
+    <!-- Deferred Google Tag Manager - loads after page content -->
+    <script>
+      // Load GTM after page is interactive
+      if (document.readyState === "complete") {
+        loadGTM();
+      } else {
+        window.addEventListener("load", loadGTM);
+      }
+
+      function loadGTM() {
+        // Initialize dataLayer first
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        window.gtag = gtag;
+
+        // Load GTM script and initialize after it loads
+        const script = document.createElement("script");
+        script.async = true;
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-PP3QX79H4M";
+        script.onload = function () {
+          gtag("js", new Date());
+          gtag("config", "G-PP3QX79H4M");
+        };
+        document.head.appendChild(script);
       }
     </script>
   </body>

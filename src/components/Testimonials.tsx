@@ -55,6 +55,7 @@ function Testimonials() {
               alt="Vaneck Logo"
               className="h-10 md:h-12 w-auto invert mb-2"
               style={{ filter: "brightness(0) invert(1)" }}
+              loading="lazy"
             />
             <div className="text-zinc-200">
               <p className="text-lg md:text-xl italic text-center mb-4">
@@ -73,6 +74,7 @@ function Testimonials() {
               alt="One Community Logo"
               className="h-10 md:h-12 w-auto invert"
               style={{ filter: "brightness(0) invert(1)" }}
+              loading="lazy"
             />
             <div className="text-zinc-200">
               <p className="text-lg md:text-xl italic text-center mb-4">

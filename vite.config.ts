@@ -26,9 +26,31 @@ export default defineConfig({
     cssCodeSplit: false,
     sourcemap: false,
     outDir: "dist",
+    minify: "terser",
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      },
+    },
     rollupOptions: {
       output: {
-        manualChunks: undefined,
+        manualChunks: (id) => {
+          // Separate vendor chunks for better caching
+          if (id.includes("node_modules")) {
+            if (id.includes("react") || id.includes("react-dom")) {
+              return "vendor-react";
+            }
+            if (id.includes("framer-motion")) {
+              return "vendor-framer";
+            }
+            if (id.includes("@radix-ui")) {
+              return "vendor-radix";
+            }
+            // Other vendor dependencies
+            return "vendor";
+          }
+        },
       },
     },
   },
