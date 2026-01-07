@@ -35,22 +35,9 @@ export default defineConfig({
     },
     rollupOptions: {
       output: {
-        manualChunks: (id) => {
-          // Separate vendor chunks for better caching
-          if (id.includes("node_modules")) {
-            if (id.includes("react") || id.includes("react-dom")) {
-              return "vendor-react";
-            }
-            if (id.includes("framer-motion")) {
-              return "vendor-framer";
-            }
-            if (id.includes("@radix-ui")) {
-              return "vendor-radix";
-            }
-            // Other vendor dependencies
-            return "vendor";
-          }
-        },
+        // Use Vite's default chunking strategy for reliability
+        // This avoids React loading order issues in production
+        manualChunks: undefined,
       },
     },
   },
